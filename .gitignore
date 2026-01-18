@@ -2,3 +2,10 @@
 .idea/
 *.csv
 drafts/
+
+
+# C++ Compiled files
+*.exe
+*.out
+*.o
+*.obj
