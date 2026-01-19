@@ -1,23 +1,29 @@
 #include <iostream>
+using namespace std;
 
-int main()
+void pyramid(int height)
 {
-    int layers;
-    std::cout << "How many layers does your pyramid have? ";
-    std::cin >> layers;
-
-    for (int i = 1; i <= layers; i++)
+    for (int i = 1; i <= height; i++)
     {
-        for (int j = 1; j <= layers - i; j++)
+        for (int j = 1; j <= height - i; j++)
         {
-            std::cout << (" ");
+            cout << " ";
         }
 
         for (int k = 1; k <= 2 * i - 1; k++)
         {
-            std::cout << ("*");
+            cout << "*";
         }
 
-        std::cout << ("\n");
+        cout << "\n";
     }
+}
+
+int main()
+{
+    int height;
+    std::cout << ("How heights are your pyramid?");
+    std::cin >> height;
+    pyramid(height);
+    return 0;
 }

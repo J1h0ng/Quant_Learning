@@ -33,7 +33,7 @@ for i in range(20, len(df)):
             cost = shares_to_buy * current_price
             capital -= cost
             position = shares_to_buy
-            print(f"Day {i}: 🔥 買入 {shares_to_buy} 股 @ {current_price:.2f}")
+            print(f"Day {i}: 買入 {shares_to_buy} 股 @ {current_price:.2f}")
 
     elif df["MA5"][i - 1] >= df["MA20"][i - 1] and df["MA5"][i] <= df["MA20"][i]:
         plt.scatter(i, current_price, marker='v', color='green', s=100, zorder=5)
@@ -42,13 +42,13 @@ for i in range(20, len(df)):
             revenue = position * current_price
             capital += revenue
             position = 0
-            print(f"Day {i}: 💀 賣出獲利了結 @ {current_price:.2f}")
+            print(f"Day {i}: 賣出獲利了結 @ {current_price:.2f}")
 
 if position > 0:
     capital += position * df['Price'].iloc[-1]
 
 total_return = (capital - initial_capital) / initial_capital * 100
-color_result = 'red' if total_return > 0 else 'green'  # 台灣慣例：紅賺綠賠
+color_result = 'green' if total_return > 0 else 'red'
 
 # transform=plt.gca().transAxes 代表使用「相對座標」 (0,0是左下, 1,1是右上)
 # (0.02, 0.95) 代表左上角位置
